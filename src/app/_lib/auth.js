@@ -5,6 +5,11 @@ import GitHub from "next-auth/providers/github";
 import bcrypt from "bcryptjs";
 import { supabase } from "@/app/_lib/supabase";
 import { createGuest, getGuest } from "./data-service";
+import jwt from "jsonwebtoken";
+
+export function signToken(payload) {
+  return jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: "1d" });
+}
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   providers: [
@@ -89,14 +94,19 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     },
 
     // Session callback
-    async session({ session, token, user }) {
-      if (!token) return null;
-      const guest = await getGuest(session.user.email);
-      session.user.guestId = guest.id;
-         
+    async session({ session, token }) {
+      if (!session?.user) return session; // اگر session.user وجود ندارد، برگردان
+
+      try {
+        const guest = await getGuest(session.user.email);
+        if (guest) session.user.guestId = guest.id;
+      } catch (err) {
+        console.error("getGuest failed:", err);
+      }
+
       session.user.id = token.id;
       session.user.name = token.name;
-      session.user.email = token.email; // اضافه کردن ایمیل برای consistency
+      session.user.email = token.email;
 
       return session;
     },

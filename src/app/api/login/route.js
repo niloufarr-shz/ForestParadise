@@ -1,5 +1,5 @@
 import { supabase } from "@/app/_lib/supabase";
-import { signToken } from "@/app/_lib/jwt";
+import { signToken } from "@/app/_lib/auth";
 
 export async function POST(req) {
   const { email, password } = await req.json();

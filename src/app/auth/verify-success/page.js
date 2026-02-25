@@ -11,8 +11,8 @@ export default function VerifySuccessPage() {
   }, [router])
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1 className="text-accent-500" >Your email has been successfully verified!</h1>
+    <div  className="text-center mt-10" >
+      <h1 className="text-accent-500 text-[20px]" >Your email has been successfully verified!</h1>
       <p>Redirecting you to the login page...</p>
     </div>
   )

@@ -2,7 +2,7 @@
 
 import { signIn } from "next-auth/react";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -52,7 +52,8 @@ export default function LoginPage() {
       }
 
       // ورود موفق
-      router.push("/account");
+      
+      redirect("/account");
     } catch (err) {
       console.error(err);
       setError("خطای شبکه یا سرور. لطفاً دوباره تلاش کنید.");
