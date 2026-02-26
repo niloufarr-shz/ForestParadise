@@ -50,13 +50,13 @@ export default async function Page({ params }) {
           />
         </div>
 
-        <div className="flex justify-end items-center gap-6">
-          <SubmitButton pendingLabel="Updating...">
-            
+        <div className="flex justify-center items-center gap-6 ">
+          <SubmitButton
+            className="px-2 py-2 text-sm sm:px-6 sm:py-3 sm:text-base"
+            pendingLabel="Updating..."
+          >
             Update Reservation
           </SubmitButton>
-
-          
         </div>
       </form>
     </div>

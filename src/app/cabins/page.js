@@ -17,7 +17,7 @@ export default async function Page({ searchParams }) {
   const filter = params?.capacity ?? "all";
 
   return (
-    <div className="px-2 md:px-10 py-10">
+    <div className="px-2 md:px-10 py-5">
       <h1 className="text-4xl mb-5 text-accent-400 font-medium">
         Our Luxury Cabins
       </h1>

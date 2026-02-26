@@ -7,7 +7,7 @@ export default function Header() {
     <header className="px-4 py-4 md:px-8 md:py-5 sticky top-0 z-50">
       <div className="flex justify-between items-center max-w-7xl mx-auto">
 
-        <Logo />
+      
 
         {/* دسکتاپ */}
         <div className="hidden sm:block">
@@ -20,7 +20,7 @@ export default function Header() {
             <Navigation />
           </MobileMenu>
         </div>
-
+            <Logo />
       </div>
     </header>
   );

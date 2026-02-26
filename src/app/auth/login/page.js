@@ -3,6 +3,7 @@
 import { signIn } from "next-auth/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -42,9 +43,7 @@ export default function LoginPage() {
 
           case "wrong_password":
           default:
-            setError(
-             "The Password is wrong (Have you verified yor email ? )" ,
-            );
+            setError("The Password is wrong ");
             setErrorType("wrong_password");
             break;
         }
@@ -66,20 +65,20 @@ export default function LoginPage() {
     <div className="min-h-screen flex items-center justify-center  text-white p-4">
       <div className="w-full max-w-md bg-primary-800 rounded-xl shadow-lg p-8 space-y-6">
         <h2 className="text-2xl font-bold text-center ">
-         Login To The Account
+          Login To The Account
         </h2>
         <div className="mt-6 flex gap-3">
           <button
             onClick={() => signIn("github", { callbackUrl: "/account" })}
             className="w-1/2 bg-gray-800 text-white py-2 rounded-lg hover:bg-gray-900 transition"
           >
-           Login With GitHub
+            Login With GitHub
           </button>
           <button
             onClick={() => signIn("google", { callbackUrl: "/account" })}
             className="w-1/2 bg-gray-800 text-white py-2 rounded-lg hover:bg-gray-900 transition"
           >
-           Login With Google
+            Login With Google
           </button>
         </div>
         {/* جداکننده */}
@@ -89,7 +88,7 @@ export default function LoginPage() {
           <div className="flex-1 h-px bg-gray-300"></div>
         </div>
         <form onSubmit={handleSubmit} className="space-y-4" dir="rtl">
-          <label > Email Address </label>
+          <label> Email Address </label>
           <input
             type="email"
             placeholder="email"
@@ -113,28 +112,40 @@ export default function LoginPage() {
             disabled={loading}
             className="w-full bg-accent-500 text-white py-2 rounded-lg hover:bg-accent-600 transition"
           >
-            {loading ?" ...Lgging in" : "Login"}
+            {loading ? " ...Lgging in" : "Login"}
           </button>
         </form>
 
         {/* پیام خطا */}
-        {error && <p className="text-red-300 text-center text-sm md:text-[15px]">{error}</p>}
+        {error && (
+          <p className="text-red-300 text-center text-sm md:text-[15px]">
+            {error}
+          </p>
+        )}
 
         {/* لینک‌ها و دکمه‌ها بر اساس نوع خطا */}
         <div className="flex flex-col space-y-2 mt-2 items-center">
-          <a
-            href="/auth/forgot-password"
-            className="  hover:text-accent-600"
-          >
-           Reset Password
-          </a>
           {errorType === "wrong_password" && (
-            <a
-              href="/auth/register"
-              className=" hover:text-accent-600 text-center"
-            >
-             Dont have an account ? <br/> Please register first.
-            </a>
+            <>
+              <Link
+                href="/auth/forgot-password"
+                className="  text-accent-500 flex justify-center underline"
+              >
+                Reset Password
+              </Link>
+              <Link
+                href="/auth/register"
+                className=" hover:text-accent-600 text-center text-sm"
+              >
+                Dont have an account ? Please Register First.
+              </Link>
+              <Link
+                href="/auth/register"
+                className="flex justify-center text-accent-500 underline"
+              >
+                Go To Register Page
+              </Link>
+            </>
           )}
         </div>
       </div>

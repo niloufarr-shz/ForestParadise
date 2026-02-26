@@ -28,7 +28,7 @@ function ReservationForm({ cabin, user }) {
   return (
     <div className="scale-[1.01] max-w-4xl mx-auto w-full px-4 sm:px-6 lg:px-8">
       {/* --- User info header --- */}
-      <div className="bg-primary-800 mt-3 text-primary-300 px-4 sm:px-6 lg:px-8 py-4 rounded-t-md flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0">
+      <div className="bg-primary-800 mt-3 text-primary-300 px-4 sm:px-6 lg:px-8 py-4 rounded-t-md flex  sm:flex-row justify-between items-center gap-3 sm:gap-0">
         <p className="text-sm sm:text-base">Logged in as</p>
         <div className="flex gap-3 items-center">
           {user?.image ? (

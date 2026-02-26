@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 import { CiUser } from "react-icons/ci";
+import Image from "next/image";
 export default  function Navigation() {
   const { data: session } = useSession();
   return (
@@ -30,26 +31,26 @@ export default  function Navigation() {
       className="hover:text-accent-400 transition-colors flex items-center gap-4"
     >
       {session.user.image ? (
-        <img
-          className="h-8 w-8 rounded-full border border-2 hover-none  border-accent-50"
+        <Image
+          className=" h-8 w-8 rounded-full  border-2 hover-none  border-accent-50"
           src={session.user.image}
           referrerPolicy="no-referrer"
           alt="User avatar"
         />
       ) : (
-        <div className="h-8 w-8 rounded-full border border-2 border-accent-50 flex items-center justify-center bg-neutral-700">
+        <div className=" hidden sm:flex h-8 w-8 rounded-full  border-2 border-accent-50  items-center justify-center bg-neutral-700">
           <CiUser />
         </div>
       )}
 
-      <span>Guest area</span>
+      <span>Sign up</span>
     </Link>
   ) : (
     <Link
       href="/account"
       className="hover:text-accent-400 transition-colors"
     >
-      Guest area
+      Sign up
     </Link>
   )}
 </li>

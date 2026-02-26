@@ -30,7 +30,7 @@ function SideNavigation() {
   const pathName = usePathname();
   return (
     <nav className="border-r border-primary-900 w-16 md:w-48 transition-all duration-300">
-      <ul className="flex flex-col gap-2 h-full text-lg">
+      <ul className="flex flex-col gap-2  h-full text-lg">
         {navLinks.map((link) => (
           <li key={link.name}>
             <Link
@@ -52,13 +52,13 @@ function SideNavigation() {
           </li>
         ))}
 
-        <li className="mt-auto">
+        <li className="">
           {/* دکمه خروج نیز باید با عرض منو هماهنگ شود */}
-          <div className="md:hidden px-5 py-3">
+          <div className="md:hidden  py-2">
             {/* اگر کامپوننت SignOutButton متن دارد، در موبایل مخفی کنید یا آیکون جداگانه اضافه کنید */}
             <SignOutButton />
           </div>
-          <div className="hidden md:block px-5 py-3">
+          <div className="hidden md:block  py-1">
             <SignOutButton />
           </div>
         </li>

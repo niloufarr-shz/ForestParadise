@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { signIn } from "next-auth/react";
+import Link from "next/link";
 
 export default function Register() {
   const [firstName, setFirstName] = useState("");
@@ -137,10 +138,12 @@ export default function Register() {
           >
             {loading ? "...Registering" : "Register"}
           </button>
+          
         </form>
 
         {message && <p className="text-green-200 text-center">{message}</p>}
         {error && <p className="text-red-200 text-center">{error}</p>}
+        <Link href="/auth/login" className="flex justify-center text-accent-500 underline"> Go to login page </Link>
 
       </div>
     </div>

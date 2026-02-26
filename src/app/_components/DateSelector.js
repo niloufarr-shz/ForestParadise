@@ -63,7 +63,7 @@ function DateSelector({ settings, bookedDates, cabin }) {
 
      <div className="flex flex-col sm:flex-row sm:items-center justify-between px-4 sm:px-8 bg-accent-500 text-primary-800 py-4 gap-4 sm:gap-6 overflow-hidden">
   {/* --- قیمت و تعداد شب‌ها --- */}
-  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4 w-full sm:w-auto">
+  <div className="flex  sm:flex-row items-start sm:items-center gap-2 sm:gap-4 w-full sm:w-auto">
     <p className="flex gap-2 items-baseline">
       {discount > 0 ? (
         <>
@@ -80,10 +80,10 @@ function DateSelector({ settings, bookedDates, cabin }) {
 
     {numNights ? (
       <>
-        <p className="bg-accent-600 px-3 py-1 sm:py-2 text-2xl rounded-md flex items-center justify-center">
+        <p className="bg-accent-600 px-3 py-1 sm:py-2 text-xl rounded-md flex items-center justify-center">
           <span>&times;</span> <span>{numNights} Nights </span>
         </p>
-        <p className="text-base sm:text-lg font-semibold">
+        <p className="text-base mt-2 sm:text-lg font-semibold">
           Total ${cabinPrice}
         </p>
       </>

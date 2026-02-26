@@ -1,12 +1,12 @@
 "use client";
 
-import { ArrowRightOnRectangleIcon } from '@heroicons/react/24/solid';
+import { FaSignOutAlt } from "react-icons/fa";
 import { signOut } from "next-auth/react";
 
 function SignOutButton() {
   const handleLogout = async () => {
     await signOut({
-      callbackUrl: "/", // بعد از خروج بره این صفحه
+      callbackUrl: "/", 
     });
   };
 
@@ -17,7 +17,7 @@ function SignOutButton() {
     >
       {/* آیکون */}
       <div className="flex-shrink-0">
-        <ArrowRightOnRectangleIcon className='h-5 w-5 text-primary-600' />
+        <FaSignOutAlt className='h-5 w-5 text-primary-600' />
       </div>
 
       {/* متن دسکتاپ */}
