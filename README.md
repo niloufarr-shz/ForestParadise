@@ -1,36 +1,145 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+🌲 Forest Cabin Reservation Platform
 
-## Getting Started
+A modern full-stack cabin reservation system built with Next.js App Router.
+Users can explore forest cabins, select dates through an interactive calendar, view dynamic pricing, and securely book their stay after authentication.
 
-First, run the development server:
+✨ Live Demo
 
-```bash
+https://forest-paradise.vercel.app/
+
+🚀 Features
+
+🏕 Browse available forest cabins
+
+📅 Interactive date range selection
+
+💰 Dynamic price calculation based on stay duration
+
+🔐 Authentication required before booking
+
+👤 User account dashboard
+
+✏️ Edit and manage reservations
+
+📱 Fully responsive UI
+
+⚡ Optimized rendering (SSR + CSR)
+
+🛠 Tech Stack
+Frontend
+
+Next.js (App Router)
+
+React
+
+Tailwind CSS
+
+Context API (State Management)
+
+Authentication
+
+Auth.js (NextAuth – latest version)
+
+Backend & Database
+
+Supabase
+
+Date Selection
+
+React Day Picker (for booking calendar)
+
+Rendering Strategy
+
+Server-Side Rendering (SSR)
+
+Client-Side Rendering (CSR)
+
+Server Actions
+
+Deployment
+
+Vercel
+
+🧠 Architecture Overview
+
+This project leverages the Next.js App Router architecture:
+
+Server Components
+
+Data fetching
+
+Secure server logic
+
+Database operations
+
+Client Components
+
+Interactive calendar
+
+Booking forms
+
+UI state handling
+
+Protected Routes
+
+Booking requires authentication
+
+Session management handled via Auth.js
+
+Database
+
+Cabin data
+
+Booking records
+
+User-related information stored in Supabase
+
+🔐 Authentication Flow
+
+User selects desired cabin and dates
+
+If not authenticated → redirected to login
+
+After login → user can complete reservation
+
+Session is maintained securely via Auth.js
+
+📦 Installation
+# Clone repository
+git clone https://github.com/your-username/your-repo-name.git
+
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+⚙️ Environment Variables
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Create a .env.local file:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+NEXTAUTH_SECRET=
+NEXTAUTH_URL=
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+SUPABASE_URL=
+SUPABASE_ANON_KEY=
+📌 What This Project Demonstrates
 
-## Learn More
+Advanced Next.js App Router patterns
 
-To learn more about Next.js, take a look at the following resources:
+SSR vs CSR practical implementation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Secure authentication flow
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Full-stack integration with Supabase
 
-## Deploy on Vercel
+Server Actions usage
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Context API state management
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Clean component architecture
+
+Production deployment with Vercel
+
+👩‍💻 Author
+
+
