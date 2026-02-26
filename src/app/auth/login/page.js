@@ -139,14 +139,15 @@ export default function LoginPage() {
               >
                 Dont have an account ? Please Register First.
               </Link>
-              <Link
+             
+            </>
+          )}
+           <Link
                 href="/auth/register"
                 className="flex justify-center text-accent-500 underline"
               >
                 Go To Register Page
               </Link>
-            </>
-          )}
         </div>
       </div>
     </div>
